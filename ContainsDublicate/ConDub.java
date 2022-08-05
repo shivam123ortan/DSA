@@ -1,12 +1,12 @@
 import java.util.*;
 public class ConDub {
     static boolean containDouble(int arr[]){
-        for (int i=0; i<arr.length; i++){
-            for (int j=i+1; j<arr.length; j++){
-                if (arr[i]==arr[j]){
-                    return true;
-                }
+        Set<Integer> set = new HashSet<>();
+        for(int i : arr){
+            if(set.contains(i)){
+                return true;
             }
+            set.add(i);
         }
         return false;
     }
