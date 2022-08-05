@@ -1,8 +1,10 @@
-public class MaxSubArray {
+import java.util.*;
+
+class MaxSubArray {
     static int maxSubArraySum(int a[]){
 
         int size = a.length;
-        int max_so_far = Integer.MIN_VALUE
+        int max_so_far = Integer.MIN_VALUE;
         int max_ending_here = 0;
   
         for (int i = 0; i < size; i++)
@@ -15,8 +17,13 @@ public class MaxSubArray {
         }
         return max_so_far;
     }
-    public static void main(String[] args) {
-        int [] a = {-2, -3, 4, -1, -2, 1, 5, -3};
-        System.out.println("Maximum contiguous sum is " + maxSubArraySum(a));
-    }
+    public static void main(String [] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a[] = new int[n];
+        for(int i=0; i<n; i++){
+            a[i] = sc.nextInt();
+        }
+        System.out.println(maxSubArraySum(a));
+    }   
 }
